@@ -1,0 +1,13 @@
+[Unit]
+Description=Directory Size Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=YOUR_USER
+ExecStart=/usr/bin/python3 /path/to/chain_size.sh --dir-a /path/to/dir_a --dir-b /path/to/dir_b --interval 60 --output /path/to/output.csv
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
