@@ -5,7 +5,9 @@ After=network.target
 [Service]
 Type=simple
 User=YOUR_USER
-ExecStart=/usr/bin/python3 /path/to/chain_size.sh --dir-a /path/to/dir_a --dir-b /path/to/dir_b --interval 60 --output /path/to/output.csv
+Group=admin
+WorkingDirectory=/home/USERNAMEin/layer-state-size-monitor
+ExecStart=/usr/bin/python3 /home/USERNAME/layer-state-size-monitor/chain_size.py
 Restart=always
 RestartSec=10
 
