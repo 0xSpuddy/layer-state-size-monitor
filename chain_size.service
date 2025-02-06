@@ -1,12 +1,17 @@
+# THIS IS AN EXAMPLE SERVICE FILE FOR RUNNING THE BOT
+# YOU CAN USE THIS AS A TEMPLATE TO CREATE YOUR OWN SERVICE FILE
+# MAKE SURE TO REPLACE THE USERNAME WITH YOUR ACTUAL USERNAME
+# MAKE SURE TO REPLACE THE WORKING DIRECTORY WITH THE PATH TO YOUR PYTHON ENVIRONMENT / SCRIPT
+
 [Unit]
 Description=Directory Size Monitor
 After=network.target
 
 [Service]
 Type=simple
-User=YOUR_USER
+User=admin
 Group=admin
-WorkingDirectory=/home/USERNAMEin/layer-state-size-monitor
+WorkingDirectory=/home/USERNAME/layer-state-size-monitor
 ExecStart=/usr/bin/python3 /home/USERNAME/layer-state-size-monitor/chain_size.py
 Restart=always
 RestartSec=10

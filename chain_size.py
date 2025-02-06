@@ -28,10 +28,11 @@ def monitor_sizes(dir_a, dir_b, interval, output_file):
     print(f"Check interval: {interval} seconds")
     print(f"Output file: {output_file}")
 
-    # Create/open CSV file with header
-    with open(output_file, 'w', newline='') as f:
-        writer = csv.writer(f)
-        writer.writerow(['timestamp', 'dir_a_size', 'dir_b_size', 'difference'])
+    # Create CSV file with header only if it doesn't exist
+    if not os.path.exists(output_file):
+        with open(output_file, 'w', newline='') as f:
+            writer = csv.writer(f)
+            writer.writerow(['timestamp', 'dir_a_size', 'dir_b_size', 'difference'])
 
     while True:
         try:
